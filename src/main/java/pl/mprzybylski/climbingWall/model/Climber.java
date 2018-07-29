@@ -1,34 +1,85 @@
 package pl.mprzybylski.climbingWall.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
+@Table(name = "Climber")
 public class Climber {
+
+    public Climber() {}
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "Climber_Ways",
+            joinColumns = {@JoinColumn(name="climber_id")},
+            inverseJoinColumns = {@JoinColumn(name ="climbing_id")}
+    )
+    Set<ClimbingRoute> climbingRoutes = new HashSet<>();
+
+    public Climber(Set<ClimbingRoute> climbingRoutes) {
+        this.climbingRoutes = climbingRoutes;
+    }
+
+    public Set<ClimbingRoute> getClimbingRoutes() {
+        return climbingRoutes;
+    }
+
+    public void setClimbingRoutes(Set<ClimbingRoute> climbingRoutes) {
+        this.climbingRoutes = climbingRoutes;
+    }
+
+//    @OneToMany(mappedBy = "climbingRoutesMapped")
+//
+//    List<ClimbingRoute> climbingRoutesList;
+//
+//    public List<ClimbingRoute> getClimbingRoutesList() {
+//        return climbingRoutesList;
+//    }
+//
+//    public void setClimbingRoutesList(List<ClimbingRoute> climbingRoutesList) {
+//        this.climbingRoutesList = climbingRoutesList;
+//    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private Integer id;
+    private Integer climber_id;
     private String name;
     private String surname;
     private String nickname;
     private int age;
     private String sex;
     private String city;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
     private int numberOfClimbing;
-    private int comment;
+    private String comment;
 
-    public Integer getId() {
-        return id;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public Integer getClimber_id() {
+        return climber_id;
+    }
+
+    public void setClimber_id(Integer climber_id) {
+        this.climber_id = climber_id;
     }
 
     public String getName() {
@@ -79,14 +130,6 @@ public class Climber {
         this.city = city;
     }
 
-    public int getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -103,11 +146,4 @@ public class Climber {
         this.numberOfClimbing = numberOfClimbing;
     }
 
-    public int getComment() {
-        return comment;
-    }
-
-    public void setComment(int comment) {
-        this.comment = comment;
-    }
 }
