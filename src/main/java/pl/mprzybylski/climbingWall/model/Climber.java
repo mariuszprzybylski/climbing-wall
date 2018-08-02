@@ -1,6 +1,7 @@
 package pl.mprzybylski.climbingWall.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -11,37 +12,20 @@ public class Climber {
 
     public Climber() {}
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(
-            name = "Climber_Ways",
-            joinColumns = {@JoinColumn(name="climber_id")},
-            inverseJoinColumns = {@JoinColumn(name ="climbing_id")}
-    )
-    Set<ClimbingRoute> climbingRoutes = new HashSet<>();
 
-    public Climber(Set<ClimbingRoute> climbingRoutes) {
-        this.climbingRoutes = climbingRoutes;
+    //private  List<ClimbingRoute> climbingRoutes =  new ArrayList<>();
+
+    @OneToMany(mappedBy = "climber")
+    private List<ClimberWays> climberWays = new ArrayList<>();
+
+
+    public List<ClimberWays> getClimberWays() {
+        return climberWays;
     }
 
-    public Set<ClimbingRoute> getClimbingRoutes() {
-        return climbingRoutes;
+    public void setClimberWays(List<ClimberWays> climberWays) {
+        this.climberWays = climberWays;
     }
-
-    public void setClimbingRoutes(Set<ClimbingRoute> climbingRoutes) {
-        this.climbingRoutes = climbingRoutes;
-    }
-
-//    @OneToMany(mappedBy = "climbingRoutesMapped")
-//
-//    List<ClimbingRoute> climbingRoutesList;
-//
-//    public List<ClimbingRoute> getClimbingRoutesList() {
-//        return climbingRoutesList;
-//    }
-//
-//    public void setClimbingRoutesList(List<ClimbingRoute> climbingRoutesList) {
-//        this.climbingRoutesList = climbingRoutesList;
-//    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

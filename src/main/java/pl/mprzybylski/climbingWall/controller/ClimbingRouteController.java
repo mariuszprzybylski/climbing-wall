@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.mprzybylski.climbingWall.dao.ClimberDao;
 import pl.mprzybylski.climbingWall.dao.ClimbingRouteDao;
-import pl.mprzybylski.climbingWall.model.Climber;
 import pl.mprzybylski.climbingWall.model.ClimbingRoute;
 
 @Controller
@@ -26,14 +25,6 @@ public class ClimbingRouteController {
         modelMap.put("routes", new ClimbingRoute());
         return "routes/add";
     }
-
-//    @PostMapping("routes/addWay")
-//    public String saveClimberRoute(@ModelAttribute ClimbingRoute climbingRoute, ModelMap modelMap) {
-//        modelMap.put("allWay", climbingRoute);
-//        climbingRouteDao.save(climbingRoute);
-//        return "climbers/climber_id";
-//    }
-
 
     @PostMapping("routes/add")
     public String saveRoute(@ModelAttribute ClimbingRoute climbingRoute, ModelMap modelMap) {

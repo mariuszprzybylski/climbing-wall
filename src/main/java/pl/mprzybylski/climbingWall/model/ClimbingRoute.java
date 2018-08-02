@@ -1,6 +1,7 @@
 package pl.mprzybylski.climbingWall.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -9,34 +10,13 @@ import java.util.Set;
 @Table(name = "ClimbingRoute")
 public class ClimbingRoute {
 
+
+    @OneToMany(mappedBy = "climbingRoute")
+    private List<ClimberWays> climberWays = new ArrayList<>();
+
+
     public ClimbingRoute(){}
 
-    @ManyToMany(mappedBy = "climbingRoutes")
-    private Set<Climber> climbers = new HashSet<>();
-
-    public ClimbingRoute(Set<Climber> climbers) {
-        this.climbers = climbers;
-    }
-
-    public Set<Climber> getClimbers() {
-        return climbers;
-    }
-
-    public void setClimbers(Set<Climber> climbers) {
-        this.climbers = climbers;
-    }
-
-//    @OneToMany(mappedBy = "climbersMapped")
-//
-//    List<Climber> climbersList;
-//
-//    public List<Climber> getClimbersList() {
-//        return climbersList;
-//    }
-//
-//    public void setClimbersList(List<Climber> climbersList) {
-//        this.climbersList = climbersList;
-//    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

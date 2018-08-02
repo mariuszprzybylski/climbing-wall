@@ -2,30 +2,23 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Wszystkie drogi</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Title</title>
 </head>
 <body>
+
 <div th:replace="fragments/header :: 'header'"></div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <h1>Lista dróg wspinaczkowych</h1>
-        </div>
-    </div>
-</div>
+dupa
 
-<div class="container">
+<form >
+<div class="container" action="/ways/show" method="post">
+
     <div class="row">
         <div class="col-xs-12">
             <table class="table table-bordered table-hover table-custom">
                 <tr class="success">
                     <th>Id</th>
-                    <th>Nazwa drogi</th>
-                    <th>Poziom trudności</th>
-                    <th>Edycja</th>
+                    <th>Nazwa</th>
                 </tr>
                 <tr th:each="route : ${routesAll}">
                     <td th:text="${route.climbing_id}"></td>
@@ -33,10 +26,11 @@
                     <td th:text="${route.level}"></td>
                     <td><a th:href="@{/routes/{climbing_id}(climbing_id=${route.climbing_id})}">Edytuj</a></td>
                 </tr>
+                </tr>
             </table>
         </div>
     </div>
 </div>
-
+</form>
 </body>
 </html>

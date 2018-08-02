@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Doodawanie drogi wspinaczowi</title>
+</head>
+<body>
+
+<div th:replace="fragments/header :: 'header'"></div>
+
+<h1>Wybierz wspinaczkę</h1>
+
+<form action="/ways/add"  method="post">
+    <!--<input type="hidden" th:field="*{climber_id}" />-->
+    <select name="climber.climber_id">
+        <option th:each="climber : ${climbers}"
+                th:value="${climber.climber_id}"
+                th:text="${climber.name}">Lista wspinaczy
+        </option>
+    </select>
+
+    <select name="climbingRoute.climbing_id">
+        <option th:each="climber : ${climbingRoutes}"
+                th:value="${climber.climbing_id}"
+                th:text="${climber.wayName}">Lista wspinaczy
+        </option>
+    </select>
+
+    <p><input type="submit" value="Dodaj"/>
+</form>
+
+</body>
+</html>
