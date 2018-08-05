@@ -16,7 +16,7 @@ public class Climber {
     //private  List<ClimbingRoute> climbingRoutes =  new ArrayList<>();
 
     @OneToMany(mappedBy = "climber")
-    private List<ClimberWays> climberWays = new ArrayList<>();
+   private List<ClimberWays> climberWays = new ArrayList<>();
 
 
     public List<ClimberWays> getClimberWays() {
@@ -128,6 +128,11 @@ public class Climber {
 
     public void setNumberOfClimbing(int numberOfClimbing) {
         this.numberOfClimbing = numberOfClimbing;
+    }
+
+
+    public String toString(){
+        return getName()+" ";
     }
 
 }

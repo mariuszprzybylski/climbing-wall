@@ -14,3 +14,21 @@
 html{
     height: 100%;
 }
+
+.hello-container{
+    color: black;
+    font-size: large;
+    background-color: #f0f4f7;
+}
+
+label{
+    color: #f0f4f7;
+}
+
+h1{
+    color: #f0f4f7;
+}
+
+h3{
+    color: #f0f4f7;
+}

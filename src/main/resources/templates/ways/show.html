@@ -3,35 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link th:href="@{/navigate.css}" rel="stylesheet"/>
 </head>
 <body class="fullscreen_bg_hello">
 
 <div th:replace="fragments/header :: 'header'"></div>
 
-dupa
-
-<form >
-<div class="container" action="/ways/show" method="post">
-
-    <div class="row">
-        <div class="col-xs-12">
-            <table class="table table-bordered table-hover table-custom">
-                <tr class="success">
-                    <th>Id</th>
-                    <th>Nazwa</th>
-                </tr>
-                <tr th:each="route : ${routesAll}">
-                    <td th:text="${route.climbing_id}"></td>
-                    <td th:text="${route.wayName}"></td>
-                    <td th:text="${route.level}"></td>
-                    <td><a th:href="@{/routes/{climbing_id}(climbing_id=${route.climbing_id})}">Edytuj</a></td>
-                </tr>
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
+<H1>Dodoano pomyślnie wspinacza.</H1>
 </form>
 </body>
-</html>

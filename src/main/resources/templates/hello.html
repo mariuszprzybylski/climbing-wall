@@ -8,15 +8,19 @@
     <link th:href="@{/navigate.css}" rel="stylesheet"/>
 </head>
 <body class="fullscreen_bg_hello">
-
 <div th:replace="fragments/header :: 'header'"></div>
 
-<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-<form th:action="@{/logout}" method="post">
-    <!--<input type="submit" value="Sign Out"/>-->
-</form>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script th:src="@{/navigate.js}"></script>
+<div color="white">
+    <div class="hello-container">
+        <p>Strona w budowie..</p>
+        <ol>
+           <li>Obecne funkcjonalność aplikacji:</li>
+            <li>Dodawanie i usuwanie wspinaczy.</li>
+            <li>Lista wspinaczy.</li>
+            <li>Dodawanie dróg wspinaczkowych.</li>
+            <li>Zapiswanie zawodnikowi dróg wspinaczkowych, które przeszedł.</li>
+        </ol>
+    </div>
+</div>
 </body>
 </html>

@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Doodawanie drogi wspinaczowi</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link th:href="@{/navigate.css}" rel="stylesheet"/>
 </head>
 <body class="fullscreen_bg_hello">
 
 <div th:replace="fragments/header :: 'header'"></div>
 
-<h1>Wybierz wspinaczkę</h1>
+<h1>Lista wspinaczy i dróg wspinaczkowych</h1>
 
 <form action="/ways/add"  method="post">
     <!--<input type="hidden" th:field="*{climber_id}" />-->

@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Wszystkie z wspinaczami</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link th:href="@{/navigate.css}" rel="stylesheet"/>
 </head>
-<body>
-$END$
+<body class="fullscreen_bg_hello">
+<div th:replace="fragments/header :: 'header'"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Lista wspinaczy z drógami wspinaczkowymi</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table table-bordered table-hover table-custom">
+                <tr class="success">
+
+                    <th>Nazwa drogi</th>
+                    <th>Nazwa wspinacza</th>
+
+                </tr>
+                <tr th:each="route : ${waysAll}">
+                    <td th:text="${route.climber}"></td>
+                    <td th:text="${route.climbingRoute}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

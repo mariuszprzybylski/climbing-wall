@@ -15,51 +15,48 @@
 
 <!--https://bootsnipp.com/snippets/featured/user-profile-sidebar-->
 
-<form action="/climbers/profil" method="post">
-    <!--<input type="hidden" name="post" th:value="${post.climber_id}">-->
 <div class="container">
-    <tr th:each="climber : ${climbersAll}">
-    <div class="row profile">
-        <div class="col-md-3">
-            <div class="profile-sidebar">
-                <!-- SIDEBAR USERPIC -->
-                <div class="profile-userpic">
-                    <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
-                </div>
-                <!-- END SIDEBAR USERPIC -->
-                <!-- SIDEBAR USER TITLE -->
-                <div class="profile-usertitle">
-                    <div class="profile-usertitle-name" th:text="${climber.getNickname()}">
-                    </div>
-                    <div class="profile-usertitle-job" th:text="${climber.getCity()}">
-                    </div>
-                </div>
-                <div class="profile-userbuttons">
-                   <a th:href="@{/ways/add}">
-                    <button type="button" class="btn btn-success btn-sm">Dodaj kolejną zdobytą drogę</button>
-                </a>
-                </div>
-                <!-- END SIDEBAR BUTTONS -->
-                <!-- SIDEBAR MENU -->
-                <div class="profile-usermenu">
-                    <ul class="nav">
-                        <li>
-                            <a th:href="@{/climbers/{climber_id}(id=${climber.climber_id})}">
-                                <i class="glyphicon glyphicon-user"></i>
-                                Edytuj dane użytkownika </a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">
-                                <i class="glyphicon glyphicon-ok"></i>
-                                Osiągnięcia </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Profil wspinacza</h1>
         </div>
-
     </div>
 </div>
+
+<form action="/climbers/profil" method="post">
+    <!--<input type="hidden" name="post" th:value="${post.climber_id}">-->
+    <div class="container">
+        <tr th:each="climber : ${climbersAll}">
+            <div class="row profile">
+                <div class="col-md-3">
+                    <div class="profile-sidebar">
+                        <!-- SIDEBAR USERPIC -->
+                        <div class="profile-userpic">
+                            <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg"
+                                 class="img-responsive" alt="">
+                        </div>
+                        <!-- END SIDEBAR USERPIC -->
+                        <!-- SIDEBAR USER TITLE -->
+                        <div class="profile-usertitle">
+                        </div>
+                        <h3>z miejscowości</h3>
+                        <div class="profile-usertitle-job" th:text="${climber.getCity()}">
+                        </div>
+                        <h3> o pseudonie</h3>
+                        <div class="profile-usertitle-name" th:text="${climber.getNickname()}">
+
+                        </div>
+                        <div class="profile-userbuttons">
+                            <a th:href="@{/ways/add}">
+                                <button type="button" class="btn btn-success btn-sm">Dodaj kolejną zdobytą drogę
+                                </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+
 </form>
 </body>
 </html>

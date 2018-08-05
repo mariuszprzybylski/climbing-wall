@@ -1,10 +1,12 @@
 package pl.mprzybylski.climbingWall.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import pl.mprzybylski.climbingWall.dao.ClimberDao;
 import pl.mprzybylski.climbingWall.dao.ClimbingRouteDao;
 import pl.mprzybylski.climbingWall.dao.ClimbingWaysDao;
@@ -68,10 +70,11 @@ public class ClimberController {
         return "ways/show";
     }
 
-    @GetMapping("/ways/show")
+    @GetMapping("/ways/all")
     public String allWays(ModelMap modelMap) {
         modelMap.put("waysAll", climbingWaysDao.findAll());
-        return "climbers/profil";
+        return "ways/all";
     }
+
 
 }
