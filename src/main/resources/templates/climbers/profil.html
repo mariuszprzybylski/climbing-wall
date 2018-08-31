@@ -46,10 +46,13 @@
                         <div class="profile-usertitle-name" th:text="${climber.getNickname()}">
 
                         </div>
+
+                        <h1 th:text="${climber.climber_id}"/>
                         <div class="profile-userbuttons">
-                            <a th:href="@{/ways/add}">
+                            <a th:href="${url}">
                                 <button type="button" class="btn btn-success btn-sm">Dodaj kolejną zdobytą drogę
                                 </button>
+                            </a>
                         </div>
                     </div>
                 </div>
