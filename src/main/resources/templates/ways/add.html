@@ -14,14 +14,20 @@
 
 <h1>Lista wspinaczy i dróg wspinaczkowych</h1>
 
-<form action="/ways/add"  method="post">
-    <!--<input type="hidden" th:field="*{climber_id}" />-->
-    <select name="climber.climber_id">
-        <option th:each="climber : ${climbers}"
-                th:value="${climber.climber_id}"
-                th:text="${climber.name}">Lista wspinaczy
-        </option>
-    </select>
+<!--<form action="/ways/add" method="post">-->
+
+
+    <form action="/ways/{climber_id}" method="post">
+        <input type="hidden" th:field="*{climber_id}" />
+
+
+
+    <!--<select name="climber.climber_id">-->
+        <!--<option th:each="climber : ${climbers}"-->
+                <!--th:value="${climber.climber_id}"-->
+                <!--th:text="${climber.name}">Lista wspinaczy-->
+        <!--</option>-->
+    <!--</select>-->
 
     <select name="climbingRoute.climbing_id">
         <option th:each="climber : ${climbingRoutes}"

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:background-color="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Dodawanie drogi</title>
@@ -12,59 +12,65 @@
 
 <div th:replace="fragments/header :: 'header'"></div>
 
-<form th:action="@{/routes/add}" th:object="${routes}" method="post">
-    <input type="hidden" th:field="*{climbing_id}"/>
+<div class="container">
     <div class="form-row">
-        <div class="col-md-12">
-            <label for="wayName">Nazwa drogi</label>
-            <input type="text" class="form-control is-valid" id="wayName" name="wayName" required>
-        </div>
-        <div class="form-group col-md-12">
-            <label for="inputState">Skala trudności</label>
-            <select id="inputState" class="form-control" name="level" required>
-                <option selected>I</option>
-                <option selected>II</option>
-                <option selected>II+</option>
-                <option selected>III+</option>
-                <option selected>IV</option>
-                <option selected>v-</option>
-                <option selected>V</option>
-                <option selected>V+</option>
-                <option selected>V+/VI-</option>
-                <option selected>VI</option>
-                <option selected>VI+</option>
-                <option selected>VI.1</option>
-                <option selected>VI.1+</option>
-                <option selected>VI.2</option>
-                <option selected>VI.2+</option>
-                <option selected>VI.2+/VI.3</option>
-                <option selected>VI.3+</option>
-                <option selected>VI.4</option>
-                <option selected>VI.4+</option>
-                <option selected>VI.5</option>
-                <option selected>VI.5+</option>
-                <option selected>VI.5+/VI.6</option>
-                <option selected>VI.6</option>
-                <option selected>VI.6+</option>
-                <option selected>VI.7</option>
-                <option selected>VI.7+</option>
-                <option selected>VI.8</option>
-            </select>
-        </div>
-        <div class="form-row">
-            <div class="col-md-12">
-                <label>Komentarz</label>
-                <textarea class="form-control" rows="3" name="description" placeholder="Komentarz"></textarea>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="col-md-12">
-                <button type="submit" class="btn btn-primary">Dodaj</button>
-            </div>
+        <div class="col-xs-12">
+            <h1>Dodaj drogę wspinaczkową</h1>
         </div>
     </div>
 
-    </div>
+
+    <form th:action="@{/routes/add}" method="post">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label for="wayName">Nazwa drogi</label>
+                <input type="text" class="form-control is-valid" id="wayName" name="wayName" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputState">Skala trudności</label>
+                <select id="inputState" class="form-control" name="level" required>
+                    <option selected>I</option>
+                    <option selected>II</option>
+                    <option selected>II+</option>
+                    <option selected>III+</option>
+                    <option selected>IV</option>
+                    <option selected>v-</option>
+                    <option selected>V</option>
+                    <option selected>V+</option>
+                    <option selected>V+/VI-</option>
+                    <option selected>VI</option>
+                    <option selected>VI+</option>
+                    <option selected>VI.1</option>
+                    <option selected>VI.1+</option>
+                    <option selected>VI.2</option>
+                    <option selected>VI.2+</option>
+                    <option selected>VI.2+/VI.3</option>
+                    <option selected>VI.3+</option>
+                    <option selected>VI.4</option>
+                    <option selected>VI.4+</option>
+                    <option selected>VI.5</option>
+                    <option selected>VI.5+</option>
+                    <option selected>VI.5+/VI.6</option>
+                    <option selected>VI.6</option>
+                    <option selected>VI.6+</option>
+                    <option selected>VI.7</option>
+                    <option selected>VI.7+</option>
+                    <option selected>VI.8</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12">
+                    <label>Komentarz</label>
+                    <textarea class="form-control" rows="2" name="description" placeholder="Komentarz"></textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">Dodaj</button>
+                </div>
+            </div>
+        </div>
 </form>
+</div>
 </body>
 </html>
