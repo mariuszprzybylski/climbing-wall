@@ -58,12 +58,7 @@ public class ClimberController {
         return "redirect:/hello";
     }
 
-//    @GetMapping("/ways/add")
-//    public String addClimbingWay(ModelMap modelMap) {
-//        modelMap.addAttribute("climbers", climberDao.findAll());
-//        modelMap.addAttribute("climbingRoutes", climbingRouteDao.findAll());
-//        return "ways/add";
-//    }
+
 
     @GetMapping("/ways/{climber_id}")
     public String addClimbingWay(@PathVariable Integer climber_id, ModelMap modelMap) {
@@ -79,13 +74,6 @@ public class ClimberController {
         return "ways/show";
     }
 
-//
-//    @PostMapping("ways/add")
-//    public String saveWays(@ModelAttribute ClimberWays climberWays, ModelMap modelMap) {
-//        modelMap.put("ways", climberWays);
-//        climbingWaysDao.save(climberWays);
-//        return "ways/show";
-//    }
 
     @GetMapping("/ways/all")
     public String allWays(ModelMap modelMap) {

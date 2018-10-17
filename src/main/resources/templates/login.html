@@ -1,71 +1,69 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"-->
-      <!--xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">-->
-<!--<head>-->
-    <!--<title>Register </title>-->
-    <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
-    <!--&lt;!&ndash;<link rel="stylesheet" href="login.css">&ndash;&gt;-->
-    <!--<link th:href="@{/login.css}" rel="stylesheet"/>-->
-<!--</head>-->
-<!--<body>-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Register </title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!--<link rel="stylesheet" href="login.css">-->
+    <link th:href="@{/login.css}" rel="stylesheet"/>
+</head>
+<body>
 
 
-<!--<div th:if="${param.error}">-->
-    <!--Invalid username and password.-->
-<!--</div>-->
-<!--<div th:if="${param.logout}">-->
-    <!--You have been logged out.-->
-<!--</div>-->
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
 
-<!--&lt;!&ndash;https://bootsnipp.com/snippets/jvamD&ndash;&gt;-->
+<!--https://bootsnipp.com/snippets/jvamD-->
 
-<!--<form th:action="@{/login}" method="post">-->
-    <!--<div id="fullscreen_bg" class="fullscreen_bg"/>-->
-    <!--<div id="regContainer" class="container">-->
-        <!--<div class="row">-->
-            <!--<div class="col-md-6 col-md-offset-3">-->
-                <!--<div class="panel panel-login">-->
-                    <!--<div class="panel-heading">-->
-                        <!--<div class="row">-->
-                            <!--<div class="col-xs-6">-->
-                                <!--<a class="active" id="login-form-link">Climbing Wall</a>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<hr>-->
-                    <!--</div>-->
-                    <!--<div class="panel-body">-->
-                        <!--<div class="row">-->
-                            <!--<div class="col-lg-12">-->
-                                <!--<form id="login-form" action="#" method="post" role="form" style="display: block;">-->
-                                    <!--<div class="form-group">-->
-                                        <!--<label for="username">Username</label>-->
-                                        <!--<input type="text" name="username" id="username" tabindex="1"-->
-                                               <!--class="form-control" placeholder="user" value="">-->
-                                    <!--</div>-->
-                                    <!--<div class="form-group">-->
-                                        <!--<label for="password">Password</label>-->
-                                        <!--<input type="password" name="password" id="password" tabindex="2"-->
-                                               <!--class="form-control" placeholder="password">-->
-                                    <!--</div>-->
-                                    <!--<div class="form-group">-->
-                                        <!--<div class="row">-->
-                                            <!--<div class="col-sm-6 col-sm-offset-3">-->
-                                                <!--<a th:href="@{/hello}">Klikając w link logujesz się bez użycia danych-->
-                                                    <!--<input type="submit" id="login-submit" tabindex="4"-->
-                                                           <!--class="form-control btn btn-login" value="Logi in"></a>-->
-                                                    <!--&lt;!&ndash;<input type="submit" id="login-submit" tabindex="4"&ndash;&gt;-->
-                                                           <!--&lt;!&ndash;class="form-control btn btn-login" value="Logi in"></a>&ndash;&gt;-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</form>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</form>-->
-<!--</body>-->
-<!--</html>-->
+<form th:action="@{/login}" method="post">
+    <div id="fullscreen_bg" class="fullscreen_bg"/>
+    <div id="regContainer" class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-login">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a class="active" id="login-form-link">Climbing Wall</a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="login-form" action="#" method="post" role="form" style="display: block;">
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" name="username" id="username" tabindex="1"
+                                               class="form-control" placeholder="user" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" id="password" tabindex="2"
+                                               class="form-control" placeholder="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <a th:href="@{/hello}">Klikając w link logujesz się bez użycia danych
+                                                    <input type="submit" id="login-submit" tabindex="4"
+                                                           class="form-control btn btn-login" value="Logi in"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

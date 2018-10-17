@@ -24,7 +24,6 @@
 </div>
 
 <form action="/climbers/profil" method="post">
-    <!--<input type="hidden" name="post" th:value="${post.climber_id}">-->
     <div class="container">
         <tr th:each="climber : ${climbersAll}">
             <div class="row profile">
@@ -42,7 +41,7 @@
                         <h3>z miejscowości</h3>
                         <div class="profile-usertitle-job" th:text="${climber.getCity()}">
                         </div>
-                        <h3> o pseudonie</h3>
+                        <h3> o pseudonimie</h3>
                         <div class="profile-usertitle-name" th:text="${climber.getNickname()}">
 
                         </div>

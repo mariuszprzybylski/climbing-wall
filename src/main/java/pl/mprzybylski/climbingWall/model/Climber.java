@@ -13,8 +13,6 @@ public class Climber {
     public Climber() {}
 
 
-    //private  List<ClimbingRoute> climbingRoutes =  new ArrayList<>();
-
     @OneToMany(mappedBy = "climber")
    private List<ClimberWays> climberWays = new ArrayList<>();
 

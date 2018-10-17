@@ -19,7 +19,6 @@ public class SearchController {
 
     @GetMapping("/climbers/search")
     public String search(@RequestParam String name, ModelMap modelMap){
-
         modelMap.put("climber",climberDao.findByName(name).get());
         return "climbers/result";
     }
